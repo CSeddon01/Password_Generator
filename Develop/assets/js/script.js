@@ -79,12 +79,11 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
+  // new array created for new password
   var selectedChar = [];
   // selects password length
   var passLength = parseInt(
-    prompt(
-      "How long would you like the password to be? Pick between 8 - 128 characters."
-    )
+    prompt("How long would you like the password to be? Pick between 8 - 128 characters.")
   );
   if (passLength < 8) {
     alert("Pick a number between 8 and 128.");
@@ -129,7 +128,7 @@ if (specChar) {
   selectedChar = selectedChar.concat(symbolsArray);
   }
   console.log("stringuserPassword", userPassword);
-  //Apend random character form masterPassword
+  //Append random password based off of user choice
   for (let i = userPassword.length; i < passLength; i++) {
     userPassword += selectedChar [ Math.floor(Math.random() * selectedChar.length)]    
   }
